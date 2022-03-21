@@ -1,26 +1,36 @@
-const arr = [1, 2, 3, 6, 8];
+// const obj = {
+//     a: 5,
+//     b: 1
+// };
 
-arr.sort(compareNum);
-console.log(arr);
+// const copy = obj;
 
-function compareNum(a, b) {
-    return a - b;
+function copy(mainObj) {
+    let objCopy = {};
+
+    let key;
+
+    for(key in mainObj){
+        objCopy[key] = mainObj[key];
+    }
+    return objCopy;
 }
-// // arr.pop();
-// arr.push(10);
-// console.log(arr);
 
 
-// for(let i = 0; i < arr.length; i++){
-//     console.log(arr[i]);
-// }
+const number = {
+    a: 2,
+    b: 5,
+    c: {
+        x:7,
+        y:4
+    }
+};
 
 
+const newNumbers = copy(number);
 
-// for(let value of arr){
-//     console.log(value);
-// }
+newNumbers.a = 10;
+newNumbers.c.x = 10;
+console.log(newNumbers);
+console.log(number);
 
-// arr.forEach(function(item,i, arr){
-// console.log(`${i}: ${item} внутри массива  ${arr}`)
-// })
