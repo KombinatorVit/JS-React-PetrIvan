@@ -1,36 +1,37 @@
-// const obj = {
-//     a: 5,
-//     b: 1
-// };
-
-// const copy = obj;
-
-function copy(mainObj) {
-    let objCopy = {};
-
-    let key;
-
-    for(key in mainObj){
-        objCopy[key] = mainObj[key];
-    }
-    return objCopy;
-}
+// let str = 'some';
+// let strObj = new String(str);
 
 
-const number = {
-    a: 2,
-    b: 5,
-    c: {
-        x:7,
-        y:4
+
+// console.log(typeof(str));
+// console.log(typeof(strObj));
+
+
+
+// console.dir([1,2,3]);
+
+
+const soldier = {
+    health: 400,
+    armor: 100,
+    sayHello : function(strr){
+        console.log(strr);
     }
 };
 
 
-const newNumbers = copy(number);
+const join = Object.create(soldier);
 
-newNumbers.a = 10;
-newNumbers.c.x = 10;
-console.log(newNumbers);
-console.log(number);
+
+// const jonh = {
+//     health: 100
+// };
+
+
+
+// Object.setPrototypeOf(jonh, soldier);
+// // jonh.__proto__ = soldier;
+// jonh.sayHello('Msssss');
+
+
 
